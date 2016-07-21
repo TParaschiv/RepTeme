@@ -1,0 +1,63 @@
+1. Debit cards are not issued to children under 12 years old.
+
+	GIVEN a person under 12 years old 
+	WHEN he/she requests a debit card
+	THEN his/hers request is rejected
+
+2. People younger than 18 can only have 1 debit card and need the extra signature of at least one parent to get the card. They have no credit limit.
+	
+a)	GIVEN a person younger than 18 years old
+	WHEN he/she requests a debit card
+		AND he/she doesn't have a debit card
+		AND he/she presents the signature of a parent
+	THEN he/she receives a debit card
+		AND he/she is saved in the system
+		AND the debit card has no limit
+	
+b)	GIVEN a person younger than 18 years old
+	WHEN he/she requests a debit card
+		AND he/she has a debit card
+	THEN his/her request is rejected
+
+b)	GIVEN a person younger than 18 years old
+	WHEN he/she requests a debit card
+		AND he/she doesn't have a debit card
+		AND he/she can't present the signature of a parent
+	THEN his/her request is rejected
+
+3. People older than 18 can apply for up to two debit cards and have a standard credit limit of 500EUR. For persons with legal incapacity, the extra signature of at least one guardian is needed.
+
+a)	GIVEN a person older than 18 years old
+	WHEN he/she requests a debit card
+		AND he/she doesn't have legal incapacity
+		AND he/she has one or less debit cards
+	THEN he/she recives a debit card
+		AND the credit limit is set to 500EUR
+		
+b)	GIVEN a person older than 18 years old
+	WHEN he/she requests a debit card
+		AND he/she has legal incapacity
+		AND he/she presents a signature of a legal guardian
+		AND he/she has one or less debit cards
+	THEN he/she recives a debit card
+		AND the credit limit is set to 500EUR
+		
+c)	GIVEN a person older than 18 years old
+	WHEN he/she requests a debit card
+		AND he/she has legal incapacity
+		AND he/she doesn't presents a signature of a legal guardian
+	THEN his/her request is rejected
+
+d)	GIVEN a person older than 18 years old
+	WHEN he/she requests a debit card
+		AND he/she has legal incapacity
+		AND he/she presents a signature of a legal guardian
+		AND he/she has two debit cards
+	THEN his/her request is rejected
+
+a)	GIVEN a person older than 18 years old
+	WHEN he/she requests a debit card
+		AND he/she doesn't have legal incapacity
+		AND he/she has two debit cards
+	THEN his/her request is rejected
+	
